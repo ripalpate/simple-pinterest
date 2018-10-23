@@ -35,7 +35,6 @@ const initialPinView = (boardID)=> {
     .then(data => {
         writePins(data);
         bindEvents();
-
     })
     .catch(error => {
         console.error('things messed up in pins', error);
