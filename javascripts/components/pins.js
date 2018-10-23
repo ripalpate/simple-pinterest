@@ -1,8 +1,17 @@
 import { loadPinsForBoard } from "../data/pinsData.js";
 
 const shortenLink = (full_url) => {
+    // console.log(new URL(full_url));
     const hostname = new URL(full_url).hostname;
     return hostname;
+}
+
+const bindEvents = () => {
+    $('#toBoardsBtn').click (()=>{
+        $('#boards-page').show();
+        $('#pins-page').hide();
+    })
+
 }
 
 const writePins = (pins) => {
@@ -25,6 +34,7 @@ const initialPinView = (boardID)=> {
     loadPinsForBoard(boardID)
     .then(data => {
         writePins(data);
+        bindEvents();
 
     })
     .catch(error => {
