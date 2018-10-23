@@ -2,6 +2,7 @@ import { loadBoards } from '../data/boardsData.js';
 
 const bindEvents = () => {
     $('#user-boards').on('click', '.board-card', (e)=>{
+        // targeting card by its id
         const clickedBoardID = $(e.target).closest('.board-card').attr('id');
         $('#boards-page').hide();
         $('#pins-page').show();
